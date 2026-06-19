@@ -4,7 +4,7 @@
 
 # 🌱 Nihol — Onlayn oziq-ovqat do'koni
 
-Zamonaviy, minimalist va to'liq responsiv **e-commerce** frontend.
+Zamonaviy, minimalist va to'liq responsiv **e-commerce** CRM va billing platformasi.
 Fermerdan dasturxoningizgacha — yangi mevalar, sabzavotlar, go'sht va sut mahsulotlari.
 
 <p>
@@ -19,16 +19,23 @@ Fermerdan dasturxoningizgacha — yangi mevalar, sabzavotlar, go'sht va sut mahs
 
 ---
 
+## 🏗️ Arxitektura va Texnologiyalar
+
+Loyiha ikki qismdan iborat:
+* **Frontend**: React 19, Vite, Tailwind CSS 4, React Router 7.
+* **Backend**: Node.js & Express.js server, SQLite (ma'lumotlar bazasi), JWT avtorizatsiya va bcrypt shifrlash.
+
+---
+
 ## ✨ Asosiy imkoniyatlar
 
-- 🎨 **Zamonaviy dizayn** — iliq oq fon, yumshoq soyalar, yumaloq kartochkalar va emerald rang palitrasi
-- 🛒 **Ishlaydigan savatcha** — mahsulot qo'shish, miqdorni boshqaruvchi `−/+` stepper va real vaqtdagi savatcha hisoblagichi
-- 🖼️ **Interaktiv Hero slider** — avtomatik almashinuv, strelka tugmalari, nuqtalar va **swipe/drag** (sichqoncha + touch)
-- 🧭 **Ko'p sahifali navigatsiya** — `react-router-dom` orqali alohida sahifalar, umumiy shablon saqlanadi
-- 🔎 **Katalog filtri** — kategoriya bo'yicha mahsulotlarni saralash
-- 🌐 **Maxsus til tanlovchi** — sayt uslubiga mos custom dropdown
-- 📱 **To'liq responsiv** — mobil, planshet va desktop uchun moslashgan
-- 📍 **Aloqa sahifasi** — kontakt kartochkalari, forma va jonli Google xaritasi
+- 🎨 **Zamonaviy dizayn** — iliq oq fon, yumshoq soyalar, yumaloq kartochkalar va emerald rang palitrasi.
+- 🛒 **Ishlaydigan savatcha** — mahsulot qo'shish, miqdorni boshqaruvchi `−/+` stepper va real vaqtdagi savatcha hisoblagichi.
+- 💳 **Click va Payme integratsiyasi** — backend Billing webhooklariga ulangan yuqori darajadagi billing sandbox simulyatori.
+- 🌐 **3 ta tildagi mahsulotlar katalogi** — o'zbek, rus va ingliz tillarida dynamic tarjima va integratsiya.
+- 🔑 **Avtorizatsiya (Auth)** — JWT token orqali kirish (`LoginPage.jsx`) va aqlli sign-up (`SignupPage.jsx`).
+- 📋 **Buyurtmalar tarixi** — foydalanuvchining o'tgan buyurtmalari, ularning holatlari va chek batafsil sahifasi (`OrdersPage.jsx`).
+- 🚀 **GitHub Actions (CI)** — loyihani avtomatlashtirilgan tekshiruvi.
 
 ---
 
@@ -41,19 +48,7 @@ Fermerdan dasturxoningizgacha — yangi mevalar, sabzavotlar, go'sht va sut mahs
 | Aksiyalar | `/aksiyalar` | Chegirmalar, promo bannerlar va maxsus takliflar |
 | Biz haqimizda | `/biz-haqimizda` | Kompaniya hikoyasi, statistika va qadriyatlar |
 | Aloqa | `/aloqa` | Kontakt ma'lumotlari, forma va xarita |
-
----
-
-## 🛠️ Texnologiyalar
-
-| Texnologiya | Vazifasi |
-| --- | --- |
-| [React 19](https://react.dev) | UI kutubxonasi |
-| [Vite 8](https://vite.dev) | Build vositasi va dev server |
-| [Tailwind CSS 4](https://tailwindcss.com) | Utility-first styling |
-| [React Router 7](https://reactrouter.com) | Klient tomonidagi routing |
-| [Lucide React](https://lucide.dev) | Ikonkalar |
-| [ESLint](https://eslint.org) | Kod sifati nazorati |
+| Buyurtmalar | `/buyurtmalar` | Mijozning buyurtmalar va to'lovlar tarixi |
 
 ---
 
@@ -61,18 +56,20 @@ Fermerdan dasturxoningizgacha — yangi mevalar, sabzavotlar, go'sht va sut mahs
 
 > **Talab:** [Node.js](https://nodejs.org) 18+ va npm
 
+### 1. Backend ishga tushirish:
 ```bash
-# 1. Repozitoriyani klonlash
-git clone https://github.com/<foydalanuvchi>/nihol.git
-cd nihol
-
-# 2. Bog'liqliklarni o'rnatish
+cd backend
 npm install
+npm start
+```
+Server **http://localhost:5000** portida ishga tushadi.
 
-# 3. Dev serverni ishga tushirish
+### 2. Frontend ishga tushirish:
+```bash
+# Bosh papkaga qaytib
+npm install
 npm run dev
 ```
-
 Brauzerda oching: **http://localhost:5173**
 
 ---
