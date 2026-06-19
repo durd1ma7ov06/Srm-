@@ -7,7 +7,7 @@ import { api } from '../utils/api';
 import { useTranslation } from '../context/LanguageContext';
 
 export default function CatalogPage() {
-  const { lang, t } = useTranslation();
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const query = (searchParams.get('q') || '').trim();
 

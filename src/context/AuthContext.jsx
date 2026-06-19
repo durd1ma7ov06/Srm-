@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { api } from '../utils/api';
 
@@ -38,8 +39,6 @@ export function AuthProvider({ children }) {
       setToken(data.token);
       setUser(data.user);
       return data.user;
-    } catch (err) {
-      throw err;
     } finally {
       setIsLoading(false);
     }
@@ -53,8 +52,6 @@ export function AuthProvider({ children }) {
       setToken(data.token);
       setUser(data.user);
       return data.user;
-    } catch (err) {
-      throw err;
     } finally {
       setIsLoading(false);
     }

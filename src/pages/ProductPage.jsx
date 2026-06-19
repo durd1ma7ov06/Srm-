@@ -19,7 +19,7 @@ const getProductStats = (id) => {
   return { rating, reviewCount, stock, weeklyBuyers };
 };
 
-const getMockReviewsList = (t) => [
+const getMockReviewsList = () => [
   { id: 1, name: 'Sardor', rating: 5, date: '12.06.2026', text: 'Juda shirin va sershbat ekan, oilamizga juda yoqdi. Rahmat!' },
   { id: 2, name: 'Elena', rating: 4, date: '10.06.2026', text: 'Очень свежее и вкусное. Доставили быстро.' },
   { id: 3, name: 'John Doe', rating: 5, date: '08.06.2026', text: 'Amazing quality! Highly recommend to everyone looking for organic food.' },
@@ -50,7 +50,7 @@ export default function ProductPage() {
       try {
         const prodData = await api.products.getById(id);
         setProduct(prodData);
-        setReviewList(getMockReviewsList(t));
+        setReviewList(getMockReviewsList());
         
         // Fetch related products (same category)
         if (prodData.category_slug) {
@@ -65,7 +65,7 @@ export default function ProductPage() {
       }
     }
     loadProduct();
-  }, [id, t]);
+  }, [id]);
 
   const stats = useMemo(() => (product ? getProductStats(product.id) : null), [product]);
   const inCart = useMemo(() => (product ? (items.find((i) => i.id === product.id)?.qty || 0) : 0), [product, items]);

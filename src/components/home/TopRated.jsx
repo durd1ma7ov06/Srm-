@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../ui/ProductCard';
 import { api } from '../../utils/api';
-import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 
 export default function TopRated() {
-  const { lang, t } = useTranslation();
+  const { lang } = useTranslation();
   const [tops, setTops] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -20,12 +20,9 @@ export default function CategoryProductsPage() {
   const [categoriesList, setCategoriesList] = useState([]);
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     async function loadCategoryData() {
       setLoading(true);
-      setError(null);
       try {
         const [catData, allCats, catProducts] = await Promise.all([
           api.products.getCategoryBySlug(slug),
@@ -36,7 +33,7 @@ export default function CategoryProductsPage() {
         setCategoriesList(allCats);
         setProductsList(catProducts);
       } catch (err) {
-        setError(err.message || 'Xatolik yuz berdi');
+        console.error(err);
       } finally {
         setLoading(false);
       }

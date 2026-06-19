@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import ProductCard from '../ui/ProductCard';
 import { api } from '../../utils/api';
 import { useTranslation } from '../../context/LanguageContext';
 
 export default function FlashDeals() {
-  const { lang, t } = useTranslation();
+  const { lang } = useTranslation();
   const [deals, setDeals] = useState([]);
   const [loading, setLoading] = useState(true);
 

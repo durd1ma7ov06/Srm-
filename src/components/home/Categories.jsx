@@ -6,7 +6,7 @@ import { api } from '../../utils/api';
 import { useTranslation } from '../../context/LanguageContext';
 
 export default function Categories() {
-  const { lang, t } = useTranslation();
+  const { lang } = useTranslation();
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
