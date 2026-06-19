@@ -10,6 +10,7 @@ import SignupPage from './pages/SignupPage';
 import PromotionsPage from './pages/PromotionsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import OrdersPage from './pages/OrdersPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="aksiyalar" element={<PromotionsPage />} />
         <Route path="biz-haqimizda" element={<AboutPage />} />
         <Route path="aloqa" element={<ContactPage />} />
+        <Route path="buyurtmalar" element={<OrdersPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

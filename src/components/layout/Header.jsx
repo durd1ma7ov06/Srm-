@@ -56,9 +56,9 @@ export default function Header() {
           
           {isAuthenticated ? (
             <div className="flex items-center gap-2">
-              <span className="hidden md:inline text-xs font-semibold text-gray-700 bg-white border border-black/5 px-3 py-2 rounded-full shadow-soft">
+              <Link to="/buyurtmalar" className="hidden md:inline text-xs font-semibold text-gray-700 bg-white border border-black/5 hover:border-brand-500 hover:text-brand-600 px-3 py-2 rounded-full shadow-soft transition-all">
                 {user.name}
-              </span>
+              </Link>
               <button
                 onClick={logout}
                 className="p-2 bg-red-50 text-red-600 rounded-full hover:bg-red-100 transition cursor-pointer text-xs font-bold px-3 py-2 border border-red-100"
